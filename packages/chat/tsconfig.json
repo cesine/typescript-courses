@@ -5,6 +5,7 @@
     "checkJs": true,
     "module": "commonjs",
     "noEmit": true,
+    // "noImplicitAny": true,
     "outDir": "dist",
     "declaration": true,
     "jsx": "react",
