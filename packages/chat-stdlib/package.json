@@ -2,7 +2,7 @@
   "name": "chat-stdlib",
   "packageManager": "yarn@4.3.1",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/chat-stdlib.d.ts",
   "scripts": {
     "build": "yarn tsc",
     "dev": "yarn build --watch --preserveWatchOutput",
@@ -10,7 +10,10 @@
     "test": "yarn jest",
     "watch": "yarn concurrently --kill-others \"yarn watch-build\" \"yarn watch-tests\"",
     "watch-build": "yarn tsc --watch --preserveWatchOutput",
-    "watch-tests": "yarn jest --watch"
+    "watch-tests": "yarn jest --watch",
+    "api-report": "yarn api-extractor run",
+    "api-docs": "yarn api-documenter markdown --input-folder temp --output-folder docs --api-report temp/api-report.json",
+    "build-with-docs": "yarn build  && yarn api-report && yarn api-docs"
   },
   "license": "NOLICENSE",
   "devDependencies": {
@@ -18,6 +21,8 @@
     "@babel/preset-env": "^7.25.0",
     "@babel/preset-typescript": "^7.24.7",
     "@eslint/js": "^9.8.0",
+    "@microsoft/api-documenter": "^7.25.9",
+    "@microsoft/api-extractor": "^7.47.4",
     "@types/babel__core": "^7",
     "@types/babel__preset-env": "^7",
     "@types/eslint": "^8",
