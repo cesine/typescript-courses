@@ -9,5 +9,8 @@
     "lint": "yarn eslint src --ext js,ts",
     "test": "yarn jest"
   },
-  "license": "NOLICENSE"
+  "license": "NOLICENSE",
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  }
 }
