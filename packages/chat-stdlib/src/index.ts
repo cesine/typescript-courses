@@ -1,6 +1,16 @@
 /**
  * @packageDocumentation A small library for common chat app functions
  */
+
+// declare global {
+
+//     interface Window {
+//         mySpecialProperty: [number, string]
+//     }
+// }
+// window.mySpecialProperty
+
+
 /**
  * A class that represents a deferred operation.
  * @public
@@ -11,11 +21,15 @@ export class Deferred<T> {
   /**
    * The function to call to resolve the deferred operation.
    */
-  #_resolve!: Parameters<ConstructorParameters<typeof Promise<T>>[0]>[0]
+  #_resolve!: Parameters<
+      ConstructorParameters<typeof Promise<T>>[0]
+  >[0]
   /**
    * The function to call to reject the deferred operation.
    */
-  #_reject!: Parameters<ConstructorParameters<typeof Promise<T>>[0]>[1]
+  #_reject!: Parameters<
+      ConstructorParameters<typeof Promise<T>>[0]
+  >[1]
   /**
    * Creates a new instance of the Deferred class.
    */
@@ -51,7 +65,7 @@ export class Deferred<T> {
 */
 export function stringifyErrorValue(err: Error): string {
   return `${err.name.toUpperCase()}: ${err.message}
-  ${err.stack || '(no stack trace information)'}`
+${err.stack || '(no stack trace information)'}`
 }
 /**
 * Stringify a thrown value
@@ -60,11 +74,14 @@ export function stringifyErrorValue(err: Error): string {
 * @param err - The thrown value
 * @beta
 */
-export function stringifyError(err: unknown, errorDescription?: string) {
-  return `${errorDescription ?? "( no error description )"}\n${err instanceof Error
+export function stringifyError(
+  err: unknown,
+  errorDescription: string,
+) {
+  return `${errorDescription ?? '( no error description )'}\n${err instanceof Error
           ? stringifyErrorValue(err)
           : err
-              ? '' + err
+              ? '' + String(err)
               : '(missing error information)'
       }`
 }
