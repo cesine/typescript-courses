@@ -1,10 +1,17 @@
 import { ITeam } from '../types'
 import { apiCall } from '../utils/networking'
+import { isTypedArray, isTeam } from '../type-guards'
 
 let cachedAllTeamsList: Promise<ITeam[]>
 export async function getAllTeams(): Promise<ITeam[]> {
   if (typeof cachedAllTeamsList === 'undefined')
     cachedAllTeamsList = apiCall('teams')
+  .then((responseData) => {
+    if (isTypedArray(responseData, isTeam)) {
+      return responseData
+    }
+    throw new Error('Invalid response')
+   })
 
   return await cachedAllTeamsList
 }
