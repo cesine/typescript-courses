@@ -5,7 +5,7 @@
  */
 function stringifyErrorValue(err: Error): string {
   return `${err.name.toUpperCase()}: ${err.message}
-  ${err.stack || '(no stack trace information)'}`
+  ${err.stack ?? '(no stack trace information)'}`
 }
 
 /**
@@ -19,7 +19,7 @@ export function stringifyError(errorDescription: string, err: unknown) {
   return `${errorDescription}\n${
     err instanceof Error
       ? stringifyErrorValue(err)
-      : err
+      : String(err)
       ? '' + err
       : '(missing error information)'
   }`

@@ -143,5 +143,11 @@ module.exports = {
         'sonarjs/no-duplicate-string': 'off',
       },
     },
+    {
+      files: ['src/utils/**/*.ts'],
+      rules: {
+        '@typescript-eslint/strict-boolean-expressions': 'error',
+      }
+    }
   ],
 }
