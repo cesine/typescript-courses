@@ -4,7 +4,7 @@ describe('Utils - Deferred', () => {
   /**
    * @type {Deferred}
    */
-  let deferred
+  let deferred: Deferred
 
   beforeEach(() => {
     deferred = new Deferred('Test Deferred')

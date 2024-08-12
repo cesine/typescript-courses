@@ -9,11 +9,12 @@ import { useAsyncDataEffect } from '../utils/api'
 import Loading from './components/Loading'
 import TeamSelector from './components/TeamSelector'
 import Team from './components/Team'
+import { ITeam } from '../types'
 
 const { useState } = React
 
 const App = () => {
-  const [teams, setTeams] = useState(null)
+  const [teams, setTeams] = useState<ITeam[]>(null)
 
   useAsyncDataEffect(() => getAllTeams(), {
     setter: setTeams,
