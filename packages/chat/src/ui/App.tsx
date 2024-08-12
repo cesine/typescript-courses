@@ -14,7 +14,7 @@ import { ITeam } from '../types'
 const { useState } = React
 
 const App = () => {
-  const [teams, setTeams] = useState<ITeam[]>(null)
+  const [teams, setTeams] = useState<ITeam[]>([])
 
   useAsyncDataEffect(() => getAllTeams(), {
     setter: setTeams,

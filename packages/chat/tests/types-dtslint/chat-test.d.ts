@@ -1,0 +1,1 @@
+import { isTypedArray } from '.';

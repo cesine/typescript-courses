@@ -14,10 +14,10 @@ async function getJSON(input: RequestInfo, init?: RequestInit) {
   } catch (err) {
     throw new Error(
       stringifyError(
-        `Networking/getJSON: An error was encountered while fetching ${JSON.stringify(
+        err,
+        `Networking/getJSONn: An error was encountered while fetching ${JSON.stringify(
           input,
         )}`,
-        err,
       ),
     )
   }
@@ -40,8 +40,8 @@ export async function apiCall(path: string, init?: RequestInit) {
     if (err instanceof HTTPError) throw err
     throw new Error(
       stringifyError(
-        `Networking/apiCall: An error was encountered while making api call to ${path}`,
         err,
+        `Networking/apiCall: An error was encountered while making api call to ${path}`,
       ),
     )
   }
