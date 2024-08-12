@@ -5,5 +5,5 @@
     "strict": true,
     "baseUrl": "../.."
   },
-  "include": [".", "../../src"]
+  "include": ["."]
 }

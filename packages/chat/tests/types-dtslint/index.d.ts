@@ -1,2 +1,1 @@
-import { isTypedArray } from "chat/src/type-guards";
-export { isTypedArray };
+export function isTypedArray<T>(arg: unknown[], guard: (toTest: unknown) => toTest is T): arg is T[];

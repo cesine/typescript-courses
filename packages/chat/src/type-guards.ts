@@ -9,14 +9,14 @@ export function isTeam(arg: unknown): arg is ITeam {
     arg !== null &&
     typeof arg === 'object' &&
     'iconUrl' in arg &&
-    typeof (arg as any).iconUrl === 'string' &&
+    typeof arg.iconUrl === 'string' &&
     'name' in arg &&
-    typeof (arg as any).name === 'string' &&
+    typeof arg.name === 'string' &&
     'id' in arg &&
-    typeof (arg as any).id === 'string' &&
+    typeof arg.id === 'string' &&
     'channels' in arg &&
-    typeof (arg as any).channels !== 'undefined' &&
-    Array.isArray((arg as any).channels)
+    typeof arg.channels !== 'undefined' &&
+    Array.isArray(arg.channels)
   )
 }
 
