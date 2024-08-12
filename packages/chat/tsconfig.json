@@ -12,7 +12,10 @@
     "moduleResolution": "Node",
     "allowImportingTsExtensions": true,
     "baseUrl": ".",
-    "rootDir": "."
+    "rootDir": ".",
+    "paths": {
+      "*": ["types/*"]
+    }
   },
   "include": ["src", "tests", "types", ".eslintrc.js", "jest.config.js"],
 }
