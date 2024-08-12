@@ -12,7 +12,7 @@ export interface IUser {
  * A chat message
  */
 export interface IMessage {
-  id: number;
+  id: string;
   teamId: string;
   channelId: string;
   userId: string;

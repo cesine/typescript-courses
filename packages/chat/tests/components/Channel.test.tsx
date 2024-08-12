@@ -10,6 +10,7 @@ test.skip('Link changes the class when hovered', () => {
         description: 'find a job here',
         id: 'recruit',
         teamId: 'linkedin',
+        messages: [],
       }}
     />,
   )
